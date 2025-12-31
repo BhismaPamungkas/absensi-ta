@@ -193,29 +193,11 @@
                                                 @php
                                                     $sNikah = array(
                                                         [
-                                                            "status" => "TK/0"
-                                                        ],
-                                                        [
-                                                            "status" => "TK/1"
-                                                        ],
-                                                        [
-                                                            "status" => "K/0"
-                                                        ],
-                                                        [
-                                                            "status" => "TK/2"
-                                                        ],
-                                                        [
-                                                            "status" => "K/1"
-                                                        ],
-                                                        [
-                                                            "status" => "TK/3"
-                                                        ],
-                                                        [
-                                                            "status" => "K/2"
-                                                        ],
-                                                        [
-                                                            "status" => "K/3"
-                                                        ],
+                                                    "status" => "Menikah"
+                                                ],
+                                                [
+                                                    "status" => "Lajang"
+                                                ],
                                                     );
                                                 @endphp
                                                 <label for="status_nikah" style="z-index: 10">Status Pernikahan</label>
@@ -497,7 +479,7 @@
                                                     </div>
                                                 @enderror
                                             </div>
-                                            <div class="group-input">
+                                            <!-- <div class="group-input">
                                                 <label>Lembur</label>
                                                 <input type="text" class="money @error('lembur') is-invalid @enderror" name="lembur" value="{{ old('lembur', auth()->user()->lembur) }}" readonly />
                                                 @error('lembur')
@@ -505,7 +487,7 @@
                                                         {{ $message }}
                                                     </div>
                                                 @enderror
-                                            </div>
+                                            </div> -->
                                             <div class="group-input">
                                                 <label>100% Kehadiran</label>
                                                 <input type="text" class="money @error('kehadiran') is-invalid @enderror" name="kehadiran" value="{{ old('kehadiran', auth()->user()->kehadiran) }}" readonly />

@@ -84,7 +84,7 @@ class CutiController extends Controller
 
         $user_roles = User::whereHas('roles', function ($query) {
             $query->where('name', 'admin')
-                ->orWhere('name', 'hrd')
+                ->orWhere('name', 'Direktur')
                 ->orWhere('name', 'general_manager');
         });
 
@@ -159,7 +159,7 @@ class CutiController extends Controller
 
         $user_roles = User::whereHas('roles', function ($query) {
             $query->where('name', 'admin')
-                ->orWhere('name', 'hrd')
+                ->orWhere('name', 'Direktur')
                 ->orWhere('name', 'general_manager');
         });
 
@@ -184,16 +184,16 @@ class CutiController extends Controller
 
             NotifApproval::dispatch($type, $user->id, $notif, $url);
 
-            $settings = settings::first();
-            if ($settings->api_url) {
-                Http::post($settings->api_url, [
-                    'api_key' => $settings->api_whatsapp,
-                    'sender' => $settings->whatsapp,
-                    'number' => $user->telepon,
-                    'message' => $notif,
-                    'footer' => $url,
-                ]);
-            }
+            // $settings = settings::first();
+            // if ($settings->api_url) {
+            //     Http::post($settings->api_url, [
+            //         'api_key' => $settings->api_whatsapp,
+            //         'sender' => $settings->whatsapp,
+            //         'number' => $user->telepon,
+            //         'message' => $notif,
+            //         'footer' => $url,
+            //     ]);
+            // }
         }
 
         $request->session()->flash('success', 'Data Berhasil di Update');
@@ -511,16 +511,16 @@ class CutiController extends Controller
 
             NotifApproval::dispatch($type, $user->id, $notif, $url);
 
-            $settings = settings::first();
-            if ($settings->api_url) {
-                Http::post($settings->api_url, [
-                    'api_key' => $settings->api_whatsapp,
-                    'sender' => $settings->whatsapp,
-                    'number' => $user->telepon,
-                    'message' => $notif,
-                    'footer' => $url,
-                ]);
-            }
+            // $settings = settings::first();
+            // if ($settings->api_url) {
+            //     Http::post($settings->api_url, [
+            //         'api_key' => $settings->api_whatsapp,
+            //         'sender' => $settings->whatsapp,
+            //         'number' => $user->telepon,
+            //         'message' => $notif,
+            //         'footer' => $url,
+            //     ]);
+            // }
         } else if ($request["status_cuti"] == "Ditolak") {
             $type = 'Rejected';
             $notif = $cuti->nama_cuti . ' Anda Telah Ditolak Oleh ' . auth()->user()->name;
@@ -535,16 +535,16 @@ class CutiController extends Controller
             $user->notify(new \App\Notifications\UserNotification);
 
             NotifApproval::dispatch($type, $user->id, $notif, $url);
-            $settings = settings::first();
-            if ($settings->api_url) {
-                Http::post($settings->api_url, [
-                    'api_key' => $settings->api_whatsapp,
-                    'sender' => $settings->whatsapp,
-                    'number' => $user->telepon,
-                    'message' => $notif,
-                    'footer' => $url,
-                ]);
-            }
+            // $settings = settings::first();
+            // if ($settings->api_url) {
+            //     Http::post($settings->api_url, [
+            //         'api_key' => $settings->api_whatsapp,
+            //         'sender' => $settings->whatsapp,
+            //         'number' => $user->telepon,
+            //         'message' => $notif,
+            //         'footer' => $url,
+            //     ]);
+            // }
         }
 
         $request->session()->flash('success', 'Data Berhasil di Update');

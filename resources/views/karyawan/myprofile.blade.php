@@ -509,7 +509,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col mb-4">
+                                    <!-- <div class="col mb-4">
                                         <label for="lembur">Lembur</label>
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control money @error('lembur') is-invalid @enderror" name="lembur" value="{{ old('lembur', auth()->user()->lembur) }}" disabled>
@@ -522,7 +522,7 @@
                                             </div>
                                             @enderror
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col mb-4">
                                         <label for="kehadiran">100% Kehadiran</label>
                                         <div class="input-group mb-3">
@@ -553,7 +553,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col mb-4">
+                                    <!-- <div class="col mb-4">
                                         <label for="bonus_pribadi">Bonus Pribadi</label>
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control money @error('bonus_pribadi') is-invalid @enderror" name="bonus_pribadi" value="{{ old('bonus_pribadi', auth()->user()->bonus_pribadi) }}" disabled>
@@ -596,7 +596,7 @@
                                             </div>
                                             @enderror
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="col mb-4">
                                     <h3 style="color: blue">Pengurangan Gaji</h3>
@@ -633,7 +633,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col mb-4">
-                                        <label for="mangkir">Mangkir</label>
+                                        <label for="mangkir">Tanpa Keterangan</label>
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control money @error('mangkir') is-invalid @enderror" name="mangkir" value="{{ old('mangkir', auth()->user()->mangkir) }}" disabled>
                                             <div class="input-group-text">
@@ -646,7 +646,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col mb-4">
+                                    <!-- <div class="col mb-4">
                                         <label for="saldo_kasbon">Saldo Kasbon</label>
                                         <div class="input-group mb-3">
                                             <input type="text" class="form-control money @error('saldo_kasbon') is-invalid @enderror" name="saldo_kasbon" value="{{ old('saldo_kasbon', auth()->user()->saldo_kasbon) }}" disabled>
@@ -659,7 +659,7 @@
                                             </div>
                                             @enderror
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

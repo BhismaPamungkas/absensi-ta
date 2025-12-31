@@ -289,6 +289,7 @@
                                 </div> -->
                                 <!-- <input type="hidden" name="total_lembur" id="total_lembur" value="0">
                             </div> -->
+                            <input type="hidden" name="total_lembur" id="total_lembur" value="0">
                         </div>
                         <div class="col mb-4">
                             <div class="card p-4">
@@ -322,6 +323,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--  -->
                     <!-- <div class="row"> -->
                          <!-- <div class="col mb-4">
                             <div class="card p-4">

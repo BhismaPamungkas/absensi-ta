@@ -9,7 +9,7 @@
                     </div>
                     <div class="col-md-6 p-0">
                         <a href="{{ url('/pegawai/tambah-pegawai') }}" class="btn btn-primary btn-sm ms-2">+ Tambah</a>
-                        <button class="btn btn-warning btn-sm" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal"><i class="fa fa-table me-2"></i> Import</button>
+                        <!-- <button class="btn btn-warning btn-sm" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal"><i class="fa fa-table me-2"></i> Import</button> -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -72,7 +72,9 @@
                                     <th style="min-width: 170px; background-color:rgb(243, 243, 243);" class="text-center">Dashboard</th>
                                     <th style="min-width: 170px; background-color:rgb(243, 243, 243);" class="text-center">Masa Berlaku</th>
                                     <!-- <th style="min-width: 170px; background-color:rgb(243, 243, 243);" class="text-center">Kartu</th> -->
+                                     @if (auth()->user()->hasRole('Operasional'))
                                     <th class="text-center" style="position: sticky; right: 0; background-color: rgb(215, 215, 215); z-index: 2;">Actions</th>
+                                    @endif
                                 </tr>
                             </thead>
                             <tbody>
@@ -122,6 +124,7 @@
                                                     <span style="font-size: 30px">♾️</span> <br> <span class="btn btn-xs mt-2" style="color: rgba(20, 78, 7, 0.889); background-color:rgb(186, 238, 162); border-radius:10px;">Aktif</span>
                                                 @endif
                                             </td>
+                                             @if (auth()->user()->hasRole('Operasional'))
                                             <!-- <td><a href="{{ url('/pegawai/qrcode/'.$du->id) }}" class="btn" style="width: 150px; background-color:rgb(196, 196, 196)"><i class="fas fa-qrcode"></i> Qrcode</a></td> -->
                                             <td style="position: sticky; right: 0; background-color: rgb(235, 235, 235); z-index: 1;"z>
                                                 <ul class="action">
@@ -148,6 +151,7 @@
                                                     </li>
                                                 </ul>
                                             </td>
+                                            @endif
                                         </tr>
                                     @endforeach
                                 @endif

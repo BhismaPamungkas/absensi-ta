@@ -76,6 +76,9 @@ class RekapDataController extends Controller
             Alert::error('Failed', 'Sudah Ada Data Pada Bulan Dan Tahun Tersebut!');
             return redirect('/rekap-data/get-data?mulai='.$request['tanggal_mulai'].'&akhir='.$request['tanggal_akhir'])->with('failed', 'Data Berhasil Disimpan');
         } else {
+            //     echo json_encode($request->all());
+            //     die;
+            // $validated = $request->all();
             $validated = $request->validate([
                 'user_id' => 'required',
                 'bulan' => 'required',
@@ -115,6 +118,14 @@ class RekapDataController extends Controller
                 'total_pengurangan' => 'required',
                 'grand_total' => 'required',
             ]);
+
+            // if($validated){
+            //     echo json_encode($request->all());
+            //     die;
+            // } else{
+            //     echo "gagal validasi";
+            //     die;
+            // }
 
             $validated['gaji_pokok'] = str_replace(',', '', $validated['gaji_pokok']);
             $validated['total_reimbursement'] = str_replace(',', '', $validated['total_reimbursement']);

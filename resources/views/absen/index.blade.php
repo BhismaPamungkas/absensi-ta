@@ -92,7 +92,7 @@
             <div class="card">
                 <div class="p-4">
                     <center>
-                        <h2>Hubungi Admin Untuk Input Shift Anda</h2>
+                        <h2>Hubungi Operasional Untuk Input Shift Anda</h2>
                     </center>
                 </div>
             </div>

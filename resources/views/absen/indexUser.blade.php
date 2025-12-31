@@ -82,7 +82,7 @@
     <div class="transfer-content">
         @if (!$shift_karyawan)
             <center>
-                <h2>Hubungi Admin Untuk Input Shift Anda</h2>
+                <h2>Hubungi Operasional Untuk Input Shift Anda</h2>
             </center>
         @elseif($shift_karyawan->status_absen == 'Libur')
             <center>

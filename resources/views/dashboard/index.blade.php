@@ -191,6 +191,7 @@
           </div>
         </div>
         
+        @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Keuangan') || auth()->user()->hasRole('Direktur'))
         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-4">
           <div class="card h-100 border-0 shadow-sm">
             <div class="card-body">
@@ -208,6 +209,7 @@
         </div>
       </div>
     </div>
+    @endif
     
     <!-- Financial Stats -->
     <!-- <div class="col-12">

@@ -184,7 +184,7 @@
                         </li>
                       @endif
 
-                      @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Operasional'))
+                      @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Operasional') || auth()->user()->hasRole('Direktur'))
                         <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav" href="{{ url('/role') }}"><i data-feather="airplay"> </i><span>Role</span></a>
                         </li>
@@ -238,7 +238,7 @@
                           @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Direktur') || auth()->user()->hasRole('hrd') || auth()->user()->hasRole('Keuangan') || auth()->user()->hasRole('Operasional'))
                           <li><a href="{{ url('/data-absen') }}">Data Absen</a></li>
                           @endif
-                          <li><a href="{{ url('/dinas-luar') }}">Absen Dinas Luar</a></li>
+                          <!-- <li><a href="{{ url('/dinas-luar') }}">Absen Dinas Luar</a></li> -->
                           @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Direktur') || auth()->user()->hasRole('hrd') || auth()->user()->hasRole('Keuangan') || auth()->user()->hasRole('Operasional'))
                           <!-- <li><a href="{{ url('/data-dinas-luar') }}">Data Dinas Luar</a></li> -->
                           @endif
@@ -274,20 +274,20 @@
                             <a class="sidebar-link sidebar-title link-nav" href="{{ url('/rapat') }}"><i data-feather="monitor"> </i><span>Rapat</span></a>
                         </li> -->
 
-                        <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i data-feather="wind"></i><span>Kinerja Pegawai</span></a>
+                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i data-feather="wind"></i><span>Kinerja Pegawai</span></a>
                             <ul class="sidebar-submenu">
                               <li><a href="{{ url('/jenis-kinerja') }}">Jenis Kinerja</a></li>
                               <li><a href="{{ url('/laporan-kinerja') }}">Laporan Kinerja</a></li>
                               <li><a href="{{ url('/kinerja-pegawai') }}">Kinerja Pegawai</a></li>
                             </ul>
                         </li>
-                       @endif
+                       @endif -->
 
-                       <!-- @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('hrd') || auth()->user()->hasRole('Direktur') || auth()->user()->hasRole('Operasional'))
+                        <!-- @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('hrd') || auth()->user()->hasRole('Direktur') || auth()->user()->hasRole('Operasional') || auth()->user()->hasRole('Keuangan')) 
                         <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav {{ Request::is('laporan-kerja*') ? 'active' : '' }}" href="{{ url('/laporan-kerja') }}"><i data-feather="message-square"> </i><span>Laporan Kerja</span></a>
-                        </li>
-                      @endif -->
+                        </li>-->
+                      @endif  
 
                       <!-- <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title link-nav" href="{{ url('/inventory') }}"><i data-feather="git-merge"> </i><span>Inventory</span></a>
@@ -318,13 +318,13 @@
                       @endif
 
 
-                      @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Direktur') || auth()->user()->hasRole('Operasional') || auth()->user()->hasRole('hrd'))
+                      <!-- @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Direktur') || auth()->user()->hasRole('Operasional') || auth()->user()->hasRole('hrd'))
                       <li class="sidebar-list">
                         <a class="sidebar-link sidebar-title link-nav {{ Request::is('dokumen*') ? 'active' : '' }}" href="{{ url('/dokumen') }}"><i data-feather="folder"> </i><span>Dokumen Pegawai</span></a>
                       </li>
-                      @endif
+                      @endif -->
 
-                      @if (auth()->user()->hasRole('admin'))
+                      @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('Direktur'))
                         <li class="sidebar-list">
                             <a class="sidebar-link sidebar-title link-nav {{ Request::is('berita*') ? 'active' : '' }}" href="{{ url('/berita') }}"><i data-feather="star"> </i><span>Berita & Informasi</span></a>
                         </li>
